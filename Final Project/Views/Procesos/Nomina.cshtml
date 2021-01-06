@@ -1,0 +1,54 @@
+﻿@model  List<CapaEntidad.Nomina>
+
+
+    @{
+        ViewBag.Title = "Nomina";
+        Layout = "~/Views/Shared/_Layout.cshtml";
+    }
+
+    <h1></h1>
+
+    <!-- Button trigger modal -->
+    <a type="button" class="btn btn-success" href="~/Procesos/CalcularNomina">
+       Calcular Nomina
+    </a>        
+
+    <label class="float-right">
+        <nav class="navbar navbar-light bg-light">
+            <form class="form-inline">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+            </form>
+        </nav>
+    </label>
+
+
+    <table class="table table-dark">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Ano</th>
+                <th> Mes </th>
+                <th>Total</th>
+                
+
+            </tr>
+        </thead>
+
+
+        <tbody>
+            @foreach (var i in Model)
+            {
+            <tr>
+                <td>@i.Id</td>
+                <td>@i.Ano</td>
+                <td>@i.Mes</td>
+                <td>@i.Monto_Total</td>
+            </tr>
+            }
+
+
+        </tbody>
+    </table>
+
+    

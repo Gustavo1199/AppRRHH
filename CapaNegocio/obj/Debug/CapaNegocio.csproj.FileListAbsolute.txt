@@ -1,0 +1,15 @@
+C:\Users\Ernest Sanchez\source\repos\Final Project\CapaNegocio\obj\Debug\CapaNegocio.csproj.CoreCompileInputs.cache
+C:\Users\Ernest Sanchez\source\repos\Final Project\CapaNegocio\bin\Debug\CapaNegocio.dll
+C:\Users\Ernest Sanchez\source\repos\Final Project\CapaNegocio\bin\Debug\CapaNegocio.pdb
+C:\Users\Ernest Sanchez\source\repos\Final Project\CapaNegocio\bin\Debug\CapaDatos.dll
+C:\Users\Ernest Sanchez\source\repos\Final Project\CapaNegocio\bin\Debug\CapaEntidad.dll
+C:\Users\Ernest Sanchez\source\repos\Final Project\CapaNegocio\bin\Debug\EntityFramework.dll
+C:\Users\Ernest Sanchez\source\repos\Final Project\CapaNegocio\bin\Debug\CapaDatos.pdb
+C:\Users\Ernest Sanchez\source\repos\Final Project\CapaNegocio\bin\Debug\CapaDatos.dll.config
+C:\Users\Ernest Sanchez\source\repos\Final Project\CapaNegocio\bin\Debug\CapaEntidad.pdb
+C:\Users\Ernest Sanchez\source\repos\Final Project\CapaNegocio\bin\Debug\CapaEntidad.dll.config
+C:\Users\Ernest Sanchez\source\repos\Final Project\CapaNegocio\bin\Debug\EntityFramework.xml
+C:\Users\Ernest Sanchez\source\repos\Final Project\CapaNegocio\obj\Debug\CapaNegocio.csprojAssemblyReference.cache
+C:\Users\Ernest Sanchez\source\repos\Final Project\CapaNegocio\obj\Debug\CapaNegocio.csproj.CopyComplete
+C:\Users\Ernest Sanchez\source\repos\Final Project\CapaNegocio\obj\Debug\CapaNegocio.dll
+C:\Users\Ernest Sanchez\source\repos\Final Project\CapaNegocio\obj\Debug\CapaNegocio.pdb

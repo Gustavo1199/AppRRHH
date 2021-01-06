@@ -1,0 +1,55 @@
+﻿@model  List<CapaEntidad.SalidaDeEmpleado>
+
+
+@{
+    ViewBag.Title = "Salida de empleado";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+
+<h1></h1>
+
+<!-- Button trigger modal -->
+<a type="button" class="btn btn-success" href="~/Procesos/agregarSalida">
+   Agregar una Salida
+</a>
+
+<label class="float-right">
+    <nav class="navbar navbar-light bg-light">
+        <form class="form-inline">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+        </form>
+    </nav>
+</label>
+
+
+<table class="table table-dark">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nombre del Empleado</th>
+            <th> Tipo de Salida </th>
+            <th>Motivo</th>
+            <th>Fecha de Salida</th>
+
+
+        </tr>
+    </thead>
+
+
+    <tbody>
+        @foreach (var i in Model)
+        {
+        <tr>
+            <td>@i.ID</td>
+            <td>@i.Nombre_Emplado</td>
+            <td>@i.Tipo_Salida</td>
+            <td>@i.Motivo</td>
+            <td>@i.Fecha_Salida</td>
+        </tr>
+        }
+
+
+    </tbody>
+</table>

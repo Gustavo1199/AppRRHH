@@ -1,0 +1,51 @@
+﻿@model IEnumerable<Final_Project.Models.Permiso>
+
+@{
+    ViewBag.Title = "Permiso";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+@using (Html.BeginForm())
+{
+    @Html.TextBox("buscar")
+    <input type="submit" value="Buscar Permiso">
+}
+<table class="table table-dark ">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Empleado)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Desde)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.hasta)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.comentario)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Empleado)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Desde)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.hasta)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.comentario)
+            </td>
+
+        </tr>
+    }
+
+</table>

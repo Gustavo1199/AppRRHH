@@ -1,0 +1,75 @@
+﻿@model  List<CapaEntidad.Departamento>
+
+
+@{
+    ViewBag.Title = "Listado de Los Departamentos";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1></h1>
+
+<!-- Button trigger modal -->
+<a type="button" class="btn btn-success" href="~/Index/CrearDepartamento">
+    Agregar Nuevo Departamento
+</a>
+
+
+
+<label class="float-right">
+    <nav class="navbar navbar-light bg-light">
+        <form class="form-inline">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+    </nav>
+</label>
+
+
+<table class="table table-dark">
+    <thead>
+        <tr>
+            <th>Departamento_id</th>
+            <th>Codigo_Del_Departamento</th>
+            <th> Nombre_Del_Departamento </th>
+            <th>Opciones</th>
+
+        </tr>
+    </thead>
+
+
+    <tbody>
+        @foreach (var i in Model)
+        {
+            <tr>
+                <td>@i.Departamento_id</td>
+                <td>@i.Codigo_Del_Departamento</td>
+                <td>@i.Nombre_Del_Departamento</td>
+
+                <td style="text-align:center;">
+
+                    <input onclick="document.location.href='@Url.Content("~/Index/EditarDepartamento/" + i.Departamento_id)'" type="button" value="Editar" class="btn btn-primary " />
+
+                    <input onclick="FuncionEliminar(@i.Departamento_id)" value="Eliminar" type="submit" class="btn btn-danger btn-group-sm" />
+                </td>
+            </tr>
+        }
+
+
+    </tbody>
+</table>
+
+<script>
+    function FuncionEliminar(id)
+    {
+        url = "@Url.Content("~/Index/EliminarDepartamento/")" + id; 
+        $.post(url, function (data) {    
+            if (data == "1") {
+
+                document.location.href = "@Url.Content("~/Index/Departamento")";
+            }
+        });
+    }
+</script>
+
+
+

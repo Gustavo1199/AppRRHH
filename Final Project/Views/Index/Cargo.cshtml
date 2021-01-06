@@ -1,0 +1,64 @@
+﻿@model  List<CapaEntidad.Cargo>
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<h1></h1>
+
+<a type="button" class="btn btn-success" href="~/Index/AgregarCargo"> Agregar Un Nuevo Cargo  </a>
+<label class="float-right">
+    <nav class="navbar navbar-light bg-light">
+        <form class="form-inline">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+    </nav>
+</label>
+
+
+<table class="table table-dark">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th> Nombre del Cargo </th>
+            <th>Opciones</th>
+
+        </tr>
+    </thead>
+
+
+    <tbody>
+        @foreach (var i in Model)
+        {
+            <tr>
+                <td>@i.Id_DelCargo</td>
+                <td>@i.Nombre_Del_Cargo</td>
+
+                <td style="text-align:left;">
+                 
+                    <input onclick="document.location.href='@Url.Content("~/Index/EditarCargo/" + i.Id_DelCargo)'" type="button" value="Editar" class="btn btn-primary " />
+
+
+                    <input onclick="FuncionEliminar(@i.Id_DelCargo)" type="button" value="Eliminar" class="btn btn-danger btn-group-sm" />
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<script>
+    function FuncionEliminar(id)
+    {
+        url = "@Url.Content("~/Index/EliminarCargo/")" + id;
+        $.post(url, function (data) {
+            if (data == "1") {
+                document.location.href = "@Url.Content("~/Index/Cargo")";
+            };
+        });
+    }
+</script>
+
+

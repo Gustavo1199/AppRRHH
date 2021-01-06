@@ -1,0 +1,82 @@
+﻿@model  List<CapaEntidad.Empleado>
+
+
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<a type="button" class="btn btn-success" href="~/Empleado/Agregar_Empleado"> Agregar Un Nuevo Empleado </a>
+
+<label class="float-right">
+    <nav class="navbar navbar-light bg-light">
+        <form class="form-inline">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+    </nav>
+</label>
+
+
+<table class="table table-dark">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Codigo de empleado</th>
+            <th> Nombre </th>
+            <th>Telefono</th>
+            <th>Departamento</th>
+            <th> Cargo </th>
+            <th>Fecha de Ingreso</th>
+            <th>Salario</th>
+            <th> Estado </th>
+            <th>Opciones</th>
+
+        </tr>
+    </thead>
+
+
+    <tbody>
+        @foreach (var i in Model)
+        {
+        <tr>
+            <td>@i.iD</td>
+            <td>@i.Codigo_De_Empleado</td>
+            <td>@i.Nombre</td>
+            <td>@i.Telefono</td>
+            <td>@i.Departamento</td>
+            <td>@i.cargos</td>
+            <td>@i.Fechadeingreso</td>
+            <td>@i.Salary</td>
+            <td>@i.Estatus</td>
+
+            <td style="text-align:center;">
+                <div class="btn btn-success">
+
+                    @Html.ActionLink("Editar", "EditarEmpleado", new { id = i.iD })
+                </div>
+
+                <input onclick="FuncionEliminar(@i.iD)" type="button" value="Eliminar" class="btn btn-danger btn-group-sm"/>
+
+            </td>
+        </tr>
+        }
+
+    </tbody>
+</table>
+
+
+
+<script>
+    function FuncionEliminar(id)
+    {
+        url = "@Url.Content("~/Empleado/EliminarEmpleado/")" + id;
+        $.post(url, function (data) {
+
+            if (data == "1") {
+                document.location.href = "@Url.Content("~/Empleado/Empleado")";
+            };
+        });
+    }
+</script>

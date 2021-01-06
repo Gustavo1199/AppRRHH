@@ -1,0 +1,97 @@
+﻿@model IEnumerable<Final_Project.Models.Empleado>
+
+@{
+    ViewBag.Title = "Empleados Activos";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+@using (Html.BeginForm())
+{
+    @Html.Label("Por nombre");
+    @Html.TextBox("nombre");
+    
+    <input type="submit" value="Buscar" class="btn btn-success right">
+}
+
+
+
+
+<table class="table">
+    <tr>
+
+        <th>
+            Id
+        </th>
+
+        <th>
+            Codigo De Empleado
+        </th>
+        <th>
+            Nombre
+        </th>
+        <th>
+            Apellido
+        </th>
+        <th>
+            Telefono
+        </th>
+        <th>
+            Departamento
+        </th>
+        <th>
+            Cargos
+        </th>
+        <th>
+            Fecha de ingreso)
+        </th>
+        <th>
+            Salary
+        </th>
+        <th>
+            Estatus
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.iD)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.Codigo_De_Empleado)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Apellido)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Telefono)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Departamento)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.cargos)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Fechadeingreso)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Salary)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Estatus)
+            </td>
+
+        </tr>
+    }
+
+</table>

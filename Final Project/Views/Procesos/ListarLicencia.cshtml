@@ -1,0 +1,57 @@
+﻿
+    @model  List<CapaEntidad.Licencia>
+
+
+    @{
+        ViewBag.Title = "Licencia";
+        Layout = "~/Views/Shared/_Layout.cshtml";
+    }
+
+    <h1></h1>
+
+    <!-- Button trigger modal -->
+    <a type="button" class="btn btn-success" href="~/Procesos/agregarVaciones">
+        Asignar licencia
+    </a>
+
+    <label class="float-right">
+        <nav class="navbar navbar-light bg-light">
+            <form class="form-inline">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+            </form>
+        </nav>
+    </label>
+
+
+    <table class="table table-dark">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Desde  </th>
+                <th>Hasta</th>
+                <th>Comentarios</th>
+
+
+            </tr>
+        </thead>
+
+
+        <tbody>
+            @foreach (var i in Model)
+            {
+                <tr>
+                    <td>@i.id</td>
+                    <td>@i.Empleado</td>
+                    <td>@i.Desde</td>
+                    <td>@i.hasta</td>
+                    <td>@i.Comentario</td>
+                </tr>
+            }
+
+
+        </tbody>
+    </table>
+
+

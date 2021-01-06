@@ -1,0 +1,59 @@
+﻿@model  List<CapaEntidad.Vacione>
+
+
+@{
+    ViewBag.Title = "Vacaciones";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1></h1>
+
+<!-- Button trigger modal -->
+<a type="button" class="btn btn-success" href="~/Procesos/agregarVaciones">
+Asignar Vaciones
+</a>
+
+<label class="float-right">
+    <nav class="navbar navbar-light bg-light">
+        <form class="form-inline">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+        </form>
+    </nav>
+</label>
+
+
+<table class="table table-dark">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th> Desde  </th>
+            <th>Hasta</th>
+            <th>Correspondiente_a_Ano</th>
+            <th>Comentarios</th>
+
+
+        </tr>
+    </thead>
+
+
+    <tbody>
+        @foreach (var i in Model)
+        {
+        <tr>
+            <td>@i.Id</td>
+            <td>@i.Nombre_Empleado</td>
+            <td>@i.Desde</td>
+            <td>@i.Hasta</td>
+            <td>@i.Correspondiente_a_Ano</td>
+            <td>@i.Comentarios</td>
+        </tr>
+        }
+
+
+    </tbody>
+</table>
+
+
+
